@@ -37,6 +37,7 @@ class Solution(object):
             left_max = self.maxDepth(root.left)
             right_max = self.maxDepth(root.right)
             return max(left_max, right_max) + 1
+
         return 0
 
 # Iterative Solution
@@ -44,13 +45,17 @@ class Solution(object):
     def maxDepth(self, root):
         depth = 0
         level = [root]
+
         while root and level:
             depth += 1
             next_level = []
             for node in level:
                 if node.left:
                     next_level.append(node.left)
+
                 if node.right:
                     next_level.append(node.right)
+
             level = next_level
+
         return depth

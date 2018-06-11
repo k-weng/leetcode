@@ -31,6 +31,7 @@ class Solution(object):
         :rtype: List[int]
         """
         result = []
+
         return self._traverse(root, result)
 
     def _traverse(self, root, result):
@@ -38,6 +39,7 @@ class Solution(object):
             result = self._traverse(root.left, result)
             result.append(root.val)
             result = self._traverse(root.right, result)
+
         return result
 
 # Iterative Solution

@@ -34,6 +34,7 @@ class Solution(object):
         """
         result = []
         self._traverse(root, 1, result)
+
         return result
         
     def _traverse(self, root, level, result):
@@ -57,8 +58,10 @@ class Solution(object):
 
             for node in level:
                 curr_level.append(node.val)
+
                 if node.left:
                     next_level.append(node.left)
+
                 if node.right:
                     next_level.append(node.right)
     

@@ -40,6 +40,7 @@ class Solution(object):
         if left and right and left.val == right.val:
             return self._traverse(left.left, right.right) and \
                    self._traverse(right.left, left.right)
+
         return not left and not right
 
 
@@ -56,6 +57,7 @@ class Solution:
             
             if not left and not right:
                 continue
+
             if not left or not right:
                 return False
             

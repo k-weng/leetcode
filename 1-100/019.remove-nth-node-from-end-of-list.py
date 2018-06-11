@@ -30,8 +30,8 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        fast = head
-        slow = head
+        slow = fast = head
+
         for _ in xrange(n):
             fast = fast.next
         if not fast:
@@ -40,4 +40,5 @@ class Solution(object):
             fast = fast.next
             slow = slow.next
         slow.next = slow.next.next
+
         return head
