@@ -1,4 +1,6 @@
 # *************************************************************************
+# Source: https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1290/
+# 
 # Design your implementation of the linked list. You can choose to use the singly linked list 
 # or the doubly linked list. A node in a singly linked list should have two attributes: val 
 # and next. val is the value of the current node, and next is a pointer/reference to the next node. 
@@ -55,10 +57,8 @@ class MyLinkedList(object):
             return -1
 
         curr = self.head
-        i = 0
-        while i < index:
+        for _ in xrange(index):
             curr = curr.next
-            i += 1
 
         return curr.val
         
@@ -100,10 +100,8 @@ class MyLinkedList(object):
             self.addAtTail(val)
         elif index < self.length:
             prev = self.head
-            i = 0
-            while i < index - 1:
+            for _ in xrange(index - 1):
                 prev = prev.next
-                i += 1
             node = self.Node(val)
             node.next = prev.next
             prev.next = node
@@ -120,10 +118,8 @@ class MyLinkedList(object):
             self.head = self.head.next
         else:
             prev = self.head
-            i = 0
-            while i < index - 1:
+            for _ in xrange(index - 1):
                 prev = prev.next
-                i += 1
             prev.next = prev.next.next
         self.length -= 1
 

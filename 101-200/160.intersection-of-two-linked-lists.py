@@ -28,15 +28,15 @@
 #         self.next = None
 
 class Solution(object):
-    def getIntersectionNode(self, headA, headB):
+    def getIntersectionNode(self, head_a, head_b):
         """
         :type head1, head1: ListNode
         :rtype: ListNode
         """
-        a = headA
-        b = headB
+        a = head_a
+        b = head_b
         
         while a is not b:
-            a = a.next if a else headB
-            b = b.next if b else headA
+            a = a.next if a else head_b
+            b = b.next if b else head_a
         return a
